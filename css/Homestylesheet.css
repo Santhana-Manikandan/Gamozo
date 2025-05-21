@@ -1,0 +1,62 @@
+.logo {
+    width: 125px;
+    height: auto;
+}
+.header{
+  text-align: center;
+  font-family: sans-serif;
+}
+.funs{
+  animation: mymove 4s infinite;
+}
+
+@keyframes mymove {
+  50% {font-size: 40px;}
+}
+  nav {
+    width: 100%;
+    
+  }
+  html,body{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .Menu {
+    background-color:#fff;
+    overflow: hidden;
+    padding:0 30px;
+   
+    
+}
+
+/* Style the links inside the navigation bar */
+.Menu a {
+  float: left;
+  color:black;
+  padding: 30px 50px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family:sans-serif; 
+}
+
+/* Change the color of links on hover */
+.Menu a:hover {
+  background-color:#DCDCDC;
+  color:black;
+}
+
+/* Add a color to the active/current link */
+.Menu a.active {
+  background-color: white;
+  color: white;
+}
+
+/* Right-aligned section inside the top navigation */
+.Right {
+  float: right;
+}
+
+  
+  
+    
