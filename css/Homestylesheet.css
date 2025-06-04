@@ -1,62 +1,199 @@
-.logo {
-    width: 125px;
-    height: auto;
+body {  /* Nav bar */
+  margin: 0;
+  background-color:#e9e1cf;
 }
-.header{
-  text-align: center;
-  font-family: sans-serif;
-}
-.funs{
-  animation: mymove 4s infinite;
-}
-
-@keyframes mymove {
-  50% {font-size: 40px;}
-}
-  nav {
-    width: 100%;
-    
-  }
-  html,body{
-    margin: 0;
-    padding: 0;
-  }
-  
-  .Menu {
-    background-color:#fff;
-    overflow: hidden;
-    padding:0 30px;
-   
-    
-}
-
-/* Style the links inside the navigation bar */
-.Menu a {
-  float: left;
-  color:black;
-  padding: 30px 50px;
-  text-decoration: none;
-  font-size: 25px;
-  font-family:sans-serif; 
-}
-
-/* Change the color of links on hover */
-.Menu a:hover {
-  background-color:#DCDCDC;
-  color:black;
-}
-
-/* Add a color to the active/current link */
-.Menu a.active {
+.navbar ul {
+  list-style-type: none;
   background-color: white;
-  color: white;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: flex-end;
 }
-
-/* Right-aligned section inside the top navigation */
-.Right {
-  float: right;
+.navbar a {
+  color: maroon;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size:18px;
 }
-
+.navbar a:hover {
+  background-color:#f9e6e6;
+  color: black;
   
   
-    
+}
+.logo img {            /*Logo */
+  width: 150px;
+  height: auto;
+}
+.Menu {              /*Nav bar and log */
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 5px 4%;
+}
+
+li.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 150px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color:maroon;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-family: "Lato", sans-serif;
+}
+
+.dropdown-content a:hover {background-color:#f9e6e6;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.slider { /*image slider */
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  position: relative;
+}
+.slider .list {
+  display: flex;
+  min-width: calc(200px * 10);
+  position: relative;
+}
+.slider .list .item {
+  width: 200px;
+  height: 210px;
+  position: absolute;
+  left: 100%;
+  animation: autorun 20s linear infinite;
+}
+.slider .list .item:nth-child(1) {
+  animation-delay: 0s;
+}
+.slider .list .item:nth-child(2) {
+  animation-delay: 2s;
+}
+.slider .list .item:nth-child(3) {
+  animation-delay: 4s;
+}
+.slider .list .item:nth-child(4) {
+  animation-delay: 6s;
+}
+.slider .list .item:nth-child(5) {
+  animation-delay: 8s;
+}
+.slider .list .item:nth-child(6) {
+  animation-delay: 10s;
+}
+.slider .list .item:nth-child(7) {
+  animation-delay: 12s;
+}
+.slider .list .item:nth-child(8) {
+  animation-delay: 14s;
+}
+.slider .list .item:nth-child(9) {
+  animation-delay: 16s;
+}
+.slider .list .item:nth-child(10) {
+  animation-delay: 18s;
+}
+@keyframes autorun {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+.slider .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider:hover .item {
+  animation-play-state: paused;
+  filter: grayscale(1);
+}
+.slider .item:hover {
+  filter: grayscale(0);
+}
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 120px;
+}
+.header {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+.container { /* heading */
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.sentences {
+  position: absolute;
+  animation: slide 5s linear infinite;
+  
+}
+
+.sentence { /* Gradient text */
+  height: 50px;
+  font-family: "Lato", sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  background: linear-gradient(to right, #6b003e, #f7d6e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  text-align: center;
+
+}
+@keyframes slide {
+  0%, 20% {
+    top: 0; }
+  34%, 54% {
+    top: -50px; }
+  67%, 87% {
+    top:-100px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+
+
+.center-wrapper { /* centering the Heading */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  padding-top: 0px;
+  
+}
