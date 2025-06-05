@@ -1,71 +1,102 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Gamozo - Tic Tac Toe</title>
-  <link rel="stylesheet" href="../css/takstylesheet.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
-</head>
+  <head>
+    <title>Gamozo - Tic Tac Toe</title>
+    <link rel="stylesheet" href="../css/takstylesheet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Coiny&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-<body>
-  <div class="Menu">
-    <div class="logo">
-      <img class="logofix" src="logo.png" alt="logo" />
+  </head>
+
+  <body>
+    <div class="Menu">
+      <div class="logo">
+        <img class="logofix" src="logo.png" alt="logo" />
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="Home.html"><b>Home</b></a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn"><b>Game</b></a>
+            <div class="dropdown-content">
+              <a href="tiktactoe.html" onclick="confirmGame('Tic Tac Toe','tiktactoe.html')">Tic Tac Toe</a>
+              <a href="#">Game 2</a>
+              <a href="#">Game 3</a>
+            </div>
+          </li>
+          <li>
+            <a href="About.html"><b>About</b></a>
+          </li>
+          <li>
+            <a href="Contact.html"><b>Contact</b></a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <nav class="navbar">
-      <ul>
-        <li><a href="Home.html"><b>Home</b></a></li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn"><b>Game</b></a>
-          <div class="dropdown-content">
-            <a href="tiktactoe.html">Game 1</a>
-            <a href="#">Game 2</a>
-            <a href="#">Game 3</a>
-          </div>
-        </li>
-        <li><a href="About.html"><b>About</b></a></li>
-        <li><a href="Contact.html"><b>Contact</b></a></li>
-      </ul>
-    </nav>
-  </div>
 
-  <div class="everythingtop">
-    <div class="turn-container">
-      <h3 style="padding-left: 35px;font-size: 30px;  font-family: 'Coiny', system-ui;">Turn For</h3>
-      <div class="turn-box align">X</div>
-      <div class="turn-box align">O</div>
-      <div class="bg"></div>
+    <div class="everythingtop">
+      <div class="turn-container">
+        <h3
+          style="
+            padding-left: 25px;
+            font-size: 30px;
+            font-family: 'Coiny', system-ui;
+
+          "
+        >
+          Turn For
+        </h3>
+        <div class="turn-box align">X</div>
+        <div class="turn-box align">O</div>
+        <div class="bg"></div>
+      </div>
     </div>
-  </div>
 
-  <div class="everything">
-    <div class="main-grid">
-      <div class="box align">0</div>
-      <div class="box align">1</div>
-      <div class="box align">2</div>
-      <div class="box align">3</div>
-      <div class="box align">4</div>
-      <div class="box align">5</div>
-      <div class="box align">6</div>
-      <div class="box align">7</div>
-      <div class="box align">8</div>
+    <div class="everything">
+      <div class="main-grid">
+        <div class="box align">0</div>
+        <div class="box align">1</div>
+        <div class="box align">2</div>
+        <div class="box align">3</div>
+        <div class="box align">4</div>
+        <div class="box align">5</div>
+        <div class="box align">6</div>
+        <div class="box align">7</div>
+        <div class="box align">8</div>
+      </div>
     </div>
-  </div>
 
-  <div class="everythingdown">
-    <h2 id="results" style="padding-left: 35px; font-size: 30px; font-family: 'Coiny', system-ui;"></h2>
+<div class="game-controls">
+  <div class="left-side">
     <button id="play-again">Play Again</button>
   </div>
-<audio id="clickSound" src="../sound/click.mp3" preload="auto"></audio>
-<audio id="winSound" src="../sound/wi.wav" preload="auto"></audio>
-<audio id="drawSound" src="../sound/out.wav" preload="auto"></audio>
+  <div class="center-side">
+    <h2 id="results">X win</h2>
+  </div>
+  <div class="right-side">
+    <button id="reset-game">Reset</button>
+  </div>
+</div>
 
 
-  <script src="../javascript/tak.js"></script>
-</body>
+    
+    <audio id="clickSound" src="../sound/click.wav" preload="auto"></audio>
+    <audio id="winSound" src="../sound/wi.wav" preload="auto"></audio>
+    <audio id="drawSound" src="../sound/out.wav" preload="auto"></audio>
+
+    <script src="../javascript/tak.js"></script>
+  </body>
 </html>

@@ -1,5 +1,5 @@
 
-body {
+body {  /* Nav bar */
   margin: 0;
   background-color:#e9e1cf;
 }
@@ -8,7 +8,6 @@ body {
   background-color: white;
   padding: 0px;
   margin: 0px;
-  overflow: hidden;
   display: flex;
   justify-content: flex-end;
 }
@@ -27,16 +26,17 @@ body {
   
   
 }
-.logo img {
+.logo img {            /*Logo */
   width: 150px;
   height: auto;
 }
-.Menu {
+.Menu {              /*Nav bar and log */
   display: flex;
   justify-content: space-between;
   background-color: white;
   padding: 5px 4%;
 }
+
 li.dropdown {
   display: inline-block;
   position: relative;
@@ -119,35 +119,64 @@ li.dropdown {
     background-color: #bdcebe;
 }
 
-#play-again{
-    background-color: #bdcebe;
-    padding: 10px 25px;
-    border: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none;
-}
-
-#play-again:hover{
-    
-    background-color:  #618685 ;
-    color: #000;
-}
 .align{
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Coiny', system-ui;
+    
 }
 .everything{
     padding-top: 70px;
+    
 }
 .everythingtop{
     padding-top: 100px;
+
     
 }
-.everythingdown{
-    padding-left: 756px;
+.game-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 80px;
+  font-family: 'Coiny', system-ui;
+}
+
+.left-side,
+.center-side,
+.right-side {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#results {
+  font-size: 30px;
+  margin: 0;
+  display: none;
+}
+
+#play-again,
+#reset-game {
+  background-color: #bdcebe;
+  padding: 10px 25px;
+  border: none;
+  font-size: 19px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+}
+
+#play-again {
+  display: none;
+}
+
+#play-again:hover,
+#reset-game:hover {
+  background-color: #618685;
+  color: black;
 }
 

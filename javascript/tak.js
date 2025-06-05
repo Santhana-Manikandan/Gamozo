@@ -32,6 +32,14 @@ function playWinSound() {
     audio.currentTime = 0;
     audio.play();
 }
+function showConfetti() {
+      confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 }
+      });
+  }
+
 
 function checkWin(){
     let winConditions = [
@@ -47,7 +55,9 @@ function checkWin(){
         if(v0 != "" && v0 === v1 && v0 === v2){
             isGameOver = true;
             document.querySelector("#results").innerHTML = turn + " win";
-            document.querySelector("#play-again").style.display = "inline";
+                document.querySelector("#results").style.display = "inline-block"; 
+
+            document.querySelector("#play-again").style.display = "inline-block";
 
             for(j = 0; j<3; j++){
                 boxes[winConditions[i][j]].style.backgroundColor = "#bdcebe";
@@ -55,6 +65,7 @@ function checkWin(){
                 
             }
              playWinSound();
+             showConfetti();
 
         }
     }
@@ -76,7 +87,9 @@ function checkDraw(){
         if(isDraw){
             isGameOver = true;
             document.querySelector("#results").innerHTML = "Draw";
-            document.querySelector("#play-again").style.display = "inline";
+                document.querySelector("#results").style.display = "inline-block"; 
+
+            document.querySelector("#play-again").style.display = "inline-block";
             PlayoutSound();
 
         }
@@ -97,3 +110,16 @@ document.querySelector("#play-again").addEventListener("click", ()=>{
         e.style.color = "black";
     })
 })
+document.querySelector("#reset-game").addEventListener("click", () => {
+    isGameOver = false;
+    turn = "X";
+    document.querySelector(".bg").style.left = "0";
+    document.querySelector("#results").innerHTML = "";
+    document.querySelector("#play-again").style.display = "none";
+
+    boxes.forEach(e => {
+        e.innerHTML = "";
+        e.style.removeProperty("background-color");
+        e.style.color = "black";
+    });
+});
