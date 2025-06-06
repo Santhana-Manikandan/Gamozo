@@ -4,6 +4,15 @@
   <title>Number Guessing Game</title>
   <link rel="stylesheet" href="../css/Homestylesheet.css" />
   <link rel="stylesheet" href="../css/number.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="Menu">
@@ -16,7 +25,7 @@
       <li class="dropdown">
         <a href="#" class="dropbtn"><b>Game</b></a>
         <div class="dropdown-content">
-          <a href="tiktactoe.html">Game 1</a>
+          <a href="tiktactoe.html">Tic Tac Toe</a>
           <a href="number.html" onclick="confirmGame('Number Guessing Game', 'number.html')">Number Guess</a>
           <a href="#">Game 3</a>
         </div>
@@ -26,15 +35,16 @@
     </ul>
   </nav>
 </div>
+<div class="Game">
 
-
-  <h1>Guess the Number 💭</h1>
-  <p>I’m thinking of a number between 1 and 100...</p>
+  <h1 style=" font-family: 'Titillium Web', sans-serif;"><b>Guess the Number 💭</b></h1>
+  <p style=" font-family: 'Figtree', sans-serif;">I’m thinking of a number between 1 and 100...</p>
   
   <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100" />
-  <button onclick="checkGuess()">Submit</button>
+  <button onclick="checkGuess()" style="font-family: 'Arimo', sans-serif;">Submit</button>
 
-  <p id="message"></p>
+  <p style=" font-family: 'Figtree', sans-serif;" id="message"></p>
+</div>
 
   <script>
     let secretNumber = Math.floor(Math.random() * 100) + 1;
@@ -50,13 +60,14 @@
       }
 
       if (guess === secretNumber) {
-        document.getElementById("message").textContent = `🎉 Congrats! You guessed it in ${attempts} tries! 💖`;
+        document.getElementById("message").textContent = `🎉 Congrats! You guessed it in ${attempts} tries! `;
       } else if (guess < secretNumber) {
         document.getElementById("message").textContent = "📈 Too low! Try again.";
       } else {
         document.getElementById("message").textContent = "📉 Too high! Try again.";
       }
     }
+
   </script>
 
 </body>
