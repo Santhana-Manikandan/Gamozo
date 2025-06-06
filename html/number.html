@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="../css/Homestylesheet.css" />
+  <link rel="stylesheet" href="../css/number.css" />
+</head>
+<body>
+  <div class="Menu">
+  <div class="logo">
+    <img class="logofix" src="logo.png" alt="logo">
+  </div>
+  <nav class="navbar">
+    <ul>
+      <li><a href="Home.html"><b>Home</b></a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn"><b>Game</b></a>
+        <div class="dropdown-content">
+          <a href="tiktactoe.html">Game 1</a>
+          <a href="number.html" onclick="confirmGame('Number Guessing Game', 'number.html')">Number Guess</a>
+          <a href="#">Game 3</a>
+        </div>
+      </li>
+      <li><a href="About.html"><b>About</b></a></li>
+      <li><a href="Contact.html"><b>Contact</b></a></li>
+    </ul>
+  </nav>
+</div>
+
+
+  <h1>Guess the Number 💭</h1>
+  <p>I’m thinking of a number between 1 and 100...</p>
+  
+  <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100" />
+  <button onclick="checkGuess()">Submit</button>
+
+  <p id="message"></p>
+
+  <script>
+    let secretNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+
+    function checkGuess() {
+      const guess = parseInt(document.getElementById("guessInput").value);
+      attempts++;
+
+      if (isNaN(guess) || guess < 1 || guess > 100) {
+        document.getElementById("message").textContent = "⛔ Please enter a number between 1 and 100.";
+        return;
+      }
+
+      if (guess === secretNumber) {
+        document.getElementById("message").textContent = `🎉 Congrats! You guessed it in ${attempts} tries! 💖`;
+      } else if (guess < secretNumber) {
+        document.getElementById("message").textContent = "📈 Too low! Try again.";
+      } else {
+        document.getElementById("message").textContent = "📉 Too high! Try again.";
+      }
+    }
+  </script>
+
+</body>
+</html>
