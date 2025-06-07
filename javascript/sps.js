@@ -10,6 +10,7 @@ let wins = 0,
   draws = 0;
 
 function play(userChoice) {
+  document.getElementById("clickSound").play();
   const computerChoice = choices[Math.floor(Math.random() * 3)];
   document.getElementById(
     "computer-picked"
@@ -26,7 +27,7 @@ function play(userChoice) {
   if (userChoice === computerChoice) {
     result = "It's a Draw!";
     draws++;
-    document.body.style.backgroundColor = "#e9e1cf";
+    document.body.style.background = "#e9e1cf";
   } else if (
     (userChoice === "Rock" && computerChoice === "Scissors") ||
     (userChoice === "Paper" && computerChoice === "Rock") ||
@@ -34,22 +35,19 @@ function play(userChoice) {
   ) {
     result = "You Win!";
     wins++;
-    document.body.style.background = "linear-gradient(to right, #d0f0d0, #e9e1cf)";
-
+    document.body.style.background =
+      "linear-gradient(to right, #d0f0d0, #e9e1cf)";
   } else {
     result = "You Lose!";
     losses++;
-    document.body.style.background = "linear-gradient(to right,  #f8dada, #e9e1cf)";
-
+    document.body.style.background =
+      "linear-gradient(to right,  #f8dada, #e9e1cf)";
   }
 
   document.getElementById("result").textContent = result;
   document.getElementById(
     "score"
   ).textContent = `Wins: ${wins} | Losses: ${losses} | Draws: ${draws}`;
-}
-function resetBackground() {
-  document.body.style.backgroundColor = "#e9e1cf";
 }
 
 function resetGame() {
@@ -65,5 +63,5 @@ function resetGame() {
     "Wins: 0 | Losses: 0 | Draws: 0";
   const allChoices = document.querySelectorAll(".choices img");
   allChoices.forEach((img) => img.classList.remove("selected"));
-  resetBackground();
+  document.body.style.background = "#e9e1cf";
 }

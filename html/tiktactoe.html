@@ -16,7 +16,6 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
   </head>
 
   <body>
@@ -32,9 +31,24 @@
           <li class="dropdown">
             <a href="#" class="dropbtn"><b>Game</b></a>
             <div class="dropdown-content">
-              <a href="tiktactoe.html" onclick="confirmGame('Tic Tac Toe','tiktactoe.html')">Tic Tac Toe</a>
-              <a href="#">Game 2</a>
-              <a href="#">Game 3</a>
+              <a
+                style="color: #618685"
+                href="tiktactoe.html"
+                onclick="confirmGame('Tic Tac Toe', 'tiktactoe.html')"
+                >Tic Tac Toe</a
+              >
+              <a
+                style="color: #2f5f9f"
+                href="number.html"
+                onclick="confirmGame('Number Guessing Game', 'number.html')"
+                >Number Guess</a
+              >
+              <a
+                style="color: red"
+                href="sps.html"
+                onclick="confirmGame('Rock Paper Scissor', 'sps.html')"
+                >Rock Paper Scissor</a
+              >
             </div>
           </li>
           <li>
@@ -54,7 +68,6 @@
             padding-left: 25px;
             font-size: 30px;
             font-family: 'Coiny', system-ui;
-
           "
         >
           Turn For
@@ -79,20 +92,18 @@
       </div>
     </div>
 
-<div class="game-controls">
-  <div class="left-side">
-    <button id="play-again">Play Again</button>
-  </div>
-  <div class="center-side">
-    <h2 id="results">X win</h2>
-  </div>
-  <div class="right-side">
-    <button id="reset-game">Reset</button>
-  </div>
-</div>
+    <div class="game-controls">
+      <div class="left-side">
+        <button id="play-again">Play Again</button>
+      </div>
+      <div class="center-side">
+        <h2 id="results">X win</h2>
+      </div>
+      <div class="right-side">
+        <button id="reset-game">Reset</button>
+      </div>
+    </div>
 
-
-    
     <audio id="clickSound" src="../sound/click.wav" preload="auto"></audio>
     <audio id="winSound" src="../sound/wi.wav" preload="auto"></audio>
     <audio id="drawSound" src="../sound/out.wav" preload="auto"></audio>

@@ -1,52 +1,45 @@
- body {
-     background-color: #fff3e6;
+body {
+  background-color: #fff3e6;
+  text-align: center;
+  color: #5a7da0;
+  margin: 0;
+}
 
-     text-align: center;
+h1 {
+  font-size: 40px;
+}
 
-     color: #5a7da0;
-     margin: 0;
- }
+.Game {
+  padding-top: 200px;
+}
 
- h1 {
-     font-size: 40px;
- }
+input[type="number"] {
+  padding: 10px;
+  font-family: "Arimo", sans-serif;
+  font-size: 18px;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 180px;
+  box-sizing: border-box;
+}
 
- .Game {
+button {
+  padding: 10px 20px;
+  background-color: #2f5f9f;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 10px;
+}
 
-     padding-top: 200px;
- }
+button:hover {
+  background-color: #9ec6f3;
+}
 
-
- input[type="number"] {
-     padding: 10px;
-     font-family: "Arimo", sans-serif;
-     font-size: 18px;
-     border: 2px solid black;
-    
-     border-radius: 10px; 
-     width: 180px;
-     /* 👈 This makes space for full placeholder */
-     box-sizing: border-box;
-
- }
-
- button {
-     padding: 10px 20px;
-     background-color: #2f5f9f;
-     color: white;
-     font-size: 18px;
-     border: none;
-     border-radius: 8px;
-     cursor: pointer;
-     margin-left: 10px;
- }
-
- button:hover {
-     background-color:#9EC6F3;
- }
-
- #message {
-     margin-top: 20px;
-     font-size: 22px;
-     font-weight: bold;
- }
+#message {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}

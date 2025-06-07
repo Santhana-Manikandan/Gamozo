@@ -1,74 +1,118 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Number Guessing Game</title>
-  <link rel="stylesheet" href="../css/Homestylesheet.css" />
-  <link rel="stylesheet" href="../css/number.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="Menu">
-  <div class="logo">
-    <img class="logofix" src="logo.png" alt="logo">
-  </div>
-  <nav class="navbar">
-    <ul>
-      <li><a href="Home.html"><b>Home</b></a></li>
-      <li class="dropdown">
-        <a href="#" class="dropbtn"><b>Game</b></a>
-        <div class="dropdown-content">
-          <a href="tiktactoe.html">Tic Tac Toe</a>
-          <a href="number.html" onclick="confirmGame('Number Guessing Game', 'number.html')">Number Guess</a>
-          <a href="#">Game 3</a>
-        </div>
-      </li>
-      <li><a href="About.html"><b>About</b></a></li>
-      <li><a href="Contact.html"><b>Contact</b></a></li>
-    </ul>
-  </nav>
-</div>
-<div class="Game">
+  <head>
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="../css/Homestylesheet.css" />
+    <link rel="stylesheet" href="../css/number.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="Menu">
+      <div class="logo">
+        <img class="logofix" src="logo.png" alt="logo" />
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="Home.html"><b>Home</b></a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn"><b>Game</b></a>
+            <div class="dropdown-content">
+              <a
+                style="color: #618685"
+                href="tiktactoe.html"
+                onclick="confirmGame('Tic Tac Toe', 'tiktactoe.html')"
+                >Tic Tac Toe</a
+              >
+              <a
+                style="color: #2f5f9f"
+                href="number.html"
+                onclick="confirmGame('Number Guessing Game', 'number.html')"
+                >Number Guess</a
+              >
+              <a
+                style="color: red"
+                href="sps.html"
+                onclick="confirmGame('Rock Paper Scissor', 'sps.html')"
+                >Rock Paper Scissor</a
+              >
+            </div>
+          </li>
+          <li>
+            <a href="About.html"><b>About</b></a>
+          </li>
+          <li>
+            <a href="Contact.html"><b>Contact</b></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="Game">
+      <h1 style="font-family: 'Titillium Web', sans-serif">
+        <b>Guess the Number 💭</b>
+      </h1>
+      <p style="font-family: 'Figtree', sans-serif">
+        I’m thinking of a number between 1 and 100...
+      </p>
 
-  <h1 style=" font-family: 'Titillium Web', sans-serif;"><b>Guess the Number 💭</b></h1>
-  <p style=" font-family: 'Figtree', sans-serif;">I’m thinking of a number between 1 and 100...</p>
-  
-  <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100" />
-  <button onclick="checkGuess()" style="font-family: 'Arimo', sans-serif;">Submit</button>
+      <input
+        type="number"
+        id="guessInput"
+        placeholder="Enter your guess"
+        min="1"
+        max="100"
+      />
+      <button onclick="checkGuess()" style="font-family: 'Arimo', sans-serif">
+        Submit
+      </button>
 
-  <p style=" font-family: 'Figtree', sans-serif;" id="message"></p>
-</div>
+      <p style="font-family: 'Figtree', sans-serif" id="message"></p>
+    </div>
 
-  <script>
-    let secretNumber = Math.floor(Math.random() * 100) + 1;
-    let attempts = 0;
+    <script>
+      let secretNumber = Math.floor(Math.random() * 100) + 1;
+      let attempts = 0;
 
-    function checkGuess() {
-      const guess = parseInt(document.getElementById("guessInput").value);
-      attempts++;
+      function checkGuess() {
+        const guess = parseInt(document.getElementById("guessInput").value);
+        attempts++;
 
-      if (isNaN(guess) || guess < 1 || guess > 100) {
-        document.getElementById("message").textContent = "⛔ Please enter a number between 1 and 100.";
-        return;
+        if (isNaN(guess) || guess < 1 || guess > 100) {
+          document.getElementById("message").textContent =
+            "⛔ Please enter a number between 1 and 100.";
+          return;
+        }
+
+        if (guess === secretNumber) {
+          document.getElementById(
+            "message"
+          ).textContent = `🎉 Congrats! You guessed it in ${attempts} tries! `;
+        } else if (guess < secretNumber) {
+          document.getElementById("message").textContent =
+            "📈 Too low! Try again.";
+        } else {
+          document.getElementById("message").textContent =
+            "📉 Too high! Try again.";
+        }
       }
-
-      if (guess === secretNumber) {
-        document.getElementById("message").textContent = `🎉 Congrats! You guessed it in ${attempts} tries! `;
-      } else if (guess < secretNumber) {
-        document.getElementById("message").textContent = "📈 Too low! Try again.";
-      } else {
-        document.getElementById("message").textContent = "📉 Too high! Try again.";
-      }
-    }
-
-  </script>
-
-</body>
+    </script>
+  </body>
 </html>
