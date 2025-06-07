@@ -15,6 +15,13 @@
 
      padding-top: 200px;
  }
+.num {
+ 
+  text-align: right;
+  display: flex;
+  justify-content: center;
+}
+
 
 
  input[type="number"] {
@@ -50,3 +57,4 @@
      font-size: 22px;
      font-weight: bold;
  }
+ 
