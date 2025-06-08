@@ -66,3 +66,100 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.slider-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  transition: opacity 0.4s ease;
+  padding-top: 100px;
+}
+.slider-list {
+  display: flex;
+  gap: 25px;
+}
+.slider-item {
+  width: 120px;
+  height: 120px;
+  background-color: #4f3222;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+.slider-item:hover {
+  transform: scale(1.1);
+}
+.letter {
+  font-size: 48px;
+  font-weight: bold;
+  color: #e9e1cf;
+}
+.card-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  width: 70%;
+  max-width: 700px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.card-popup.show {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.card-popup h2 {
+  margin-bottom: 20px;
+  color:#4f3222;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.card-popup p {
+  font-size: 18px;
+  line-height: 1.6;
+  color:#21443E;
+  font-family: "Inter", sans-serif;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #444;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+  display: none;
+}
+
+.overlay.show {
+  display: block;
+}
+.blurred {
+  opacity: 0.3;
+  filter: blur(3px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}

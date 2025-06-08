@@ -9,6 +9,12 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   </head>
   <body style="background-color: #e9e1cf">
     <div class="Menu">
@@ -54,5 +60,24 @@
         </ul>
       </nav>
     </div>
+    <div class="overlay" id="overlay"></div>
+
+  <div class="slider-container" id="sliderContainer">
+    <div class="slider-list">
+      <div class="slider-item" onclick="showCard('G')"><span class="letter">G</span></div>
+      <div class="slider-item" onclick="showCard('A')"><span class="letter">A</span></div>
+      <div class="slider-item" onclick="showCard('M')"><span class="letter">M</span></div>
+      <div class="slider-item" onclick="showCard('O')"><span class="letter">O</span></div>
+      <div class="slider-item" onclick="showCard('Z')"><span class="letter">Z</span></div>
+      <div class="slider-item" onclick="showCard('O2')"><span class="letter">O</span></div>
+    </div>
+  </div>
+
+  <div class="card-popup" id="popupCard">
+    <span class="close-btn" title="Close" onclick="hideCard()">🎮</span>
+    <h2 id="popupTitle">Title</h2>
+    <p id="popupMessage">Message content goes here.</p>
+  </div>
+  <script src="../javascript/about.js"></script>
   </body>
 </html>
