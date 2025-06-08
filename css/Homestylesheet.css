@@ -46,7 +46,7 @@ li.dropdown {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 200px;
+  min-width: 220px;
   z-index: 1;
 }
 
