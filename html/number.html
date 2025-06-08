@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Number Guessing Game</title>
-  <link rel="stylesheet" href="../css/Homestylesheet.css" />
-  <link rel="stylesheet" href="../css/number.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&family=Figtree&family=Arimo&display=swap" rel="stylesheet">
-</head>
-
-<body style="background-color: #e9e1cf">
+  <head>
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="../css/Homestylesheet.css" />
+    <link rel="stylesheet" href="../css/number.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="Menu">
       <div class="logo">
         <img class="logofix" src="logo.png" alt="logo" />
@@ -42,8 +56,6 @@
               >
             </div>
           </li>
-          <div></div>
-
           <li>
             <a href="About.html"><b>About</b></a>
           </li>
@@ -53,58 +65,108 @@
         </ul>
       </nav>
     </div>
+    <div class="Game">
+      <h1 style="font-family: 'Titillium Web', sans-serif">
+        <b>Guess the Number 💭</b>
+      </h1>
+      <p style="font-family: 'Figtree', sans-serif">
+        I’m thinking of a number between 1 and 100...
+      </p>
 
+      <input
+        type="number"
+        id="guessInput"
+        placeholder="Enter your guess"
+        min="1"
+        max="100"
+      />
+      <button onclick="checkGuess()" style="font-family: 'Arimo', sans-serif">
+        Submit
+      </button>
+
+      <p style="font-family: 'Figtree', sans-serif" id="message"></p>
+    </div>
+
+<head>
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="../css/Homestylesheet.css" />
+  <link rel="stylesheet" href="../css/number.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="Menu">
+    <div class="logo">
+      <img class="logofix" src="logo.png" alt="logo">
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="Home.html"><b>Home</b></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn"><b>Game</b></a>
+          <div class="dropdown-content">
+            <a href="tiktactoe.html">Tic Tac Toe</a>
+            <a href="number.html" onclick="confirmGame('Number Guessing Game', 'number.html')">Number Guess</a>
+            <a href="#">Game 3</a>
+          </div>
+        </li>
+        <li><a href="About.html"><b>About</b></a></li>
+        <li><a href="Contact.html"><b>Contact</b></a></li>
+      </ul>
+    </nav>
+  </div>
   <div class="Game">
-    <h1 class="num"><b>Guess the Number 💭</b></h1>
-    <p class="hint">I’m thinking of a number between 1 and 100...</p>
+
+    <h1 class="num" style=" font-family: 'Titillium Web', sans-serif;"><b>Guess the Number 💭</b></h1>
+    <p style=" font-family: 'Figtree', sans-serif;">I’m thinking of a number between 1 and 100...</p>
 
     <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100" />
-    <button id="submitBtn" onclick="checkGuess()"><b>Submit</b></button>
-    <button id="replayBtn" onclick="resetGame()"><b>Replay</b></button>
+<button onclick="checkGuess()" style="font-family: 'Arimo', sans-serif;"><b>Submit</b></button>
+<button id="replayBtn" onclick="resetGame()" style="font-family: 'Arimo', sans-serif; "><b>Replay</b></button>
 
-    <p id="message"></p>
+
+
+    <p style=" font-family: 'Figtree', sans-serif;" id="message"></p>
   </div>
-
   <script>
     let secretNumber = Math.floor(Math.random() * 100) + 1;
     let attempts = 0;
 
-    function checkGuess() {
-      const guess = parseInt(document.getElementById("guessInput").value);
-      const messageEl = document.getElementById("message");
-      attempts++;
 
-      if (isNaN(guess) || guess < 1 || guess > 100) {
-        messageEl.textContent = "⛔ Please enter a number between 1 and 100.";
-        return;
+      function checkGuess() {
+        const guess = parseInt(document.getElementById("guessInput").value);
+        attempts++;
+
+        if (isNaN(guess) || guess < 1 || guess > 100) {
+          document.getElementById("message").textContent =
+            "⛔ Please enter a number between 1 and 100.";
+          return;
+        }
+
+        if (guess === secretNumber) {
+          document.getElementById(
+            "message"
+          ).textContent = `🎉 Congrats! You guessed it in ${attempts} tries! `;
+        } else if (guess < secretNumber) {
+          document.getElementById("message").textContent =
+            "📈 Too low! Try again.";
+        } else {
+          document.getElementById("message").textContent =
+            "📉 Too high! Try again.";
+        }
       }
-
-      if (guess === secretNumber) {
-        messageEl.textContent = `🎉 Congrats! You guessed it in ${attempts} tries!`;
-        document.getElementById("guessInput").disabled = true;
-        document.getElementById("submitBtn").disabled = true;
-      } else if (guess < secretNumber) {
-        messageEl.textContent = "📈 Too low! Try again.";
-      } else {
-        messageEl.textContent = "📉 Too high! Try again.";
-      }
-    }
-
-    function resetGame() {
-      secretNumber = Math.floor(Math.random() * 100) + 1;
-      attempts = 0;
-      document.getElementById("message").textContent = "";
-      document.getElementById("guessInput").value = "";
-      document.getElementById("guessInput").disabled = false;
-      document.getElementById("submitBtn").disabled = false;
-    }
-
-    // Enter key submits guess
-    document.getElementById("guessInput").addEventListener("keypress", function (event) {
-      if (event.key === "Enter") {
-        checkGuess();
-      }
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
