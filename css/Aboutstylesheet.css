@@ -193,23 +193,30 @@ li.dropdown {
   padding-left: 700px;
   
 }
-button {
-  padding: 12px 24px;
-  font-size: 18px;
-  border: none;
-  background: linear-gradient(90deg, #ffb6c1, #ffa07a);
-  color: white;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+  #mic-button {
+   padding-left: 500px;
+    top: -150px; 
+    left: 20px;
+    z-index: 1000;
+    position: absolute;
+    
+  }
+  #mic-icon{
+    width:55px;
+  }
+@keyframes micPlaying {
+  0%, 100% {
+    filter: drop-shadow(0 0 0 rgba(255, 0, 0, 0));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
+    transform: scale(1.1);
+  }
 }
 
-button:hover {
-  transform: scale(1.05);
+#mic-icon.active {
+  animation: micPlaying 1.5s infinite ease-in-out;
+  cursor: pointer;
 }
-.final{
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 200px;
-  margin-top: -10px;
-}
+

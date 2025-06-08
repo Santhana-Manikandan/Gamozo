@@ -4,7 +4,7 @@ function showCard(letter) {
         A: "This website is fully built using <i>HTML</i>,<i>CSS</i>, and <i> JavaScript<i/>.<br> We focused on making the frontend interactive and fun to use.",
         M: "It all started during our semester holidays, when the three of us decided to use the break to learn web development.",
         O: "After learning the basics, we wanted to turn our knowledge into something practical. We brainstormed many ideas for days.",
-        Z: "In college, during boring lectures, we used to play <span style='color:#6b003e;'><b>Tic Tac Toe</b></span>,<span style='color:#6b003e;'><b> Rock Paper Scissors</b></span>, etc. That's how we thought: why not build a<span style='color:#6b003e;'><b>game website<b></span>?",
+        Z: "In college, during boring lectures, we used to play <span style='color:#6b003e;'><b>Tic Tac Toe</b></span>,<span style='color:#6b003e;'><b> Rock Paper Scissors</b></span>, etc. That's how we thought: why not build a <span style='color:#6b003e;'><b>game website<b></span>?",
         O2: "Currently, we have Tic Tac Toe, Number Guess, and Stone Paper Scissors.<br> But this is just the beginning, we're excited to keep learning and growing!"
       };
 
@@ -35,4 +35,25 @@ function showCard(letter) {
     }
 
 
+const mic = document.getElementById('mic-button');
+const micIcon = document.getElementById('mic-icon');
+const audio = document.getElementById('messageAudio');
 
+
+  mic.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      pulse.style.display = 'block';
+          micIcon.classList.add('active');
+
+      
+
+    } else {
+      audio.pause();
+      pulse.style.animation = 'none';
+      mic.classList.remove('active')
+          micIcon.classList.add('active');
+
+      
+    }
+  });

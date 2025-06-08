@@ -85,10 +85,18 @@
   <div class="thegang">
     <img src="thegang.png" alt="us">
   </div>
-  <div class="final">
-      <button onclick="playSound()">Click Me </button>
-  <audio id="clickSound" src="../sound/Personal note.mp3"></audio>
+<div style="text-align: center; margin-top: 20px;">
+<div id="mic-button" style="cursor: pointer; display: inline-block; position: relative;">
+<img id="mic-icon" src="https://img.icons8.com/ios-filled/100/microphone.png" alt="Mic Button">
+    
   </div>
+</div>
+<audio id="messageAudio">
+  <source src="../sound/Personal note.mp3" type="audio/mpeg" />
+</audio>
+
+
+
 
   <script src="../javascript/about.js"></script>
   </body>
