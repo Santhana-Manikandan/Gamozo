@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Number Guessing Game</title>
   <link rel="stylesheet" href="../css/Homestylesheet.css" />
   <link rel="stylesheet" href="../css/number.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
-    rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
-    rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&family=Figtree&family=Arimo&display=swap" rel="stylesheet">
 </head>
 
-<body>
-  <div class="Menu">
-    <div class="logo">
-      <img class="logofix" src="logo.png" alt="logo">
-    </div>
-    <nav class="navbar">
-      <ul>
-        <li><a href="Home.html"><b>Home</b></a></li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn"><b>Game</b></a>
-          <div class="dropdown-content">
-            <a href="tiktactoe.html">Tic Tac Toe</a>
-            <a href="number.html" onclick="confirmGame('Number Guessing Game', 'number.html')">Number Guess</a>
-            <a href="#">Game 3</a>
-          </div>
-        </li>
-        <li><a href="About.html"><b>About</b></a></li>
-        <li><a href="Contact.html"><b>Contact</b></a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="Game">
+<body style="background-color: #e9e1cf">
+    <div class="Menu">
+      <div class="logo">
+        <img class="logofix" src="logo.png" alt="logo" />
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="Home.html"><b>Home</b></a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn"><b>Game</b></a>
+            <div class="dropdown-content">
+              <a
+                style="color: #618685"
+                href="tiktactoe.html"
+                onclick="confirmGame('Tic Tac Toe', 'tiktactoe.html')"
+                >Tic Tac Toe</a
+              >
+              <a
+                style="color: #2f5f9f"
+                href="number.html"
+                onclick="confirmGame('Number Guessing Game', 'number.html')"
+                >Number Guess</a
+              >
+              <a
+                style="color: red"
+                href="sps.html"
+                onclick="confirmGame('Rock Paper Scissor', 'sps.html')"
+                >Rock Paper Scissor</a
+              >
+            </div>
+          </li>
+          <div></div>
 
-    <h1 class="num" style=" font-family: 'Titillium Web', sans-serif;"><b>Guess the Number 💭</b></h1>
-    <p style=" font-family: 'Figtree', sans-serif;">I’m thinking of a number between 1 and 100...</p>
+          <li>
+            <a href="About.html"><b>About</b></a>
+          </li>
+          <li>
+            <a href="Contact.html"><b>Contact</b></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  <div class="Game">
+    <h1 class="num"><b>Guess the Number 💭</b></h1>
+    <p class="hint">I’m thinking of a number between 1 and 100...</p>
 
     <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100" />
-<button onclick="checkGuess()" style="font-family: 'Arimo', sans-serif;"><b>Submit</b></button>
-<button id="replayBtn" onclick="resetGame()" style="font-family: 'Arimo', sans-serif; "><b>Replay</b></button>
+    <button id="submitBtn" onclick="checkGuess()"><b>Submit</b></button>
+    <button id="replayBtn" onclick="resetGame()"><b>Replay</b></button>
 
-
-
-    <p style=" font-family: 'Figtree', sans-serif;" id="message"></p>
+    <p id="message"></p>
   </div>
 
   <script>
@@ -72,10 +82,7 @@
       if (guess === secretNumber) {
         messageEl.textContent = `🎉 Congrats! You guessed it in ${attempts} tries!`;
         document.getElementById("guessInput").disabled = true;
-        document.querySelector("button").disabled = true;
-
-        // Show reset button
-        showResetButton();
+        document.getElementById("submitBtn").disabled = true;
       } else if (guess < secretNumber) {
         messageEl.textContent = "📈 Too low! Try again.";
       } else {
@@ -83,25 +90,21 @@
       }
     }
 
-   
-
     function resetGame() {
       secretNumber = Math.floor(Math.random() * 100) + 1;
       attempts = 0;
       document.getElementById("message").textContent = "";
       document.getElementById("guessInput").value = "";
       document.getElementById("guessInput").disabled = false;
-      document.querySelector("button").disabled = false;
+      document.getElementById("submitBtn").disabled = false;
     }
-    // Allow pressing Enter to submit the guess too
-document.getElementById("guessInput").addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
-    checkGuess();
-  }
-});
 
+    // Enter key submits guess
+    document.getElementById("guessInput").addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        checkGuess();
+      }
+    });
   </script>
-
 </body>
-
 </html>

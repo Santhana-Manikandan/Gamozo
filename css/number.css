@@ -1,60 +1,64 @@
- body {
-     background-color: #fff3e6;
-
-     text-align: center;
-
-     color: #5a7da0;
-     margin: 0;
- }
-
- h1 {
-     font-size: 40px;
- }
-
- .Game {
-
-     padding-top: 200px;
- }
-.num {
- 
-  text-align: right;
-  display: flex;
-  justify-content: center;
+body {
+    background-color: #fff3e6;
+    text-align: center;
+    color: #5a7da0;
+    margin: 0;
+    font-family: 'Arimo', sans-serif;
 }
 
+h1.num {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 70px;
+    text-align: center;
 
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
 
- input[type="number"] {
-     padding: 10px;
-     font-family: "Arimo", sans-serif;
-     font-size: 18px;
-     border: 2px solid black;
-    
-     border-radius: 10px; 
-     width: 180px;
-     /* 👈 This makes space for full placeholder */
-     box-sizing: border-box;
+.Game {
+    padding-top: 200px;
+     animation: fadeIn 1.5s ease-in;
+}
 
- }
+.hint {
+    font-family: 'Figtree', sans-serif;
+    font-size: 30px;
+}
 
- button {
-     padding: 10px 20px;
-     background-color: #2f5f9f;
-     color: white;
-     font-size: 18px;
-     border: none;
-     border-radius: 8px;
-     cursor: pointer;
-     margin-left: 10px;
- }
+input[type="number"] {
+    padding: 10px;
+    font-family: "Arimo", sans-serif;
+    font-size: 18px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 180px;
+    box-sizing: border-box;
+}
 
- button:hover {
-     background-color:#9EC6F3;
- }
+button {
+    padding: 10px 20px;
+    background-color: #2f5f9f;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: bold;
+}
 
- #message {
-     margin-top: 20px;
-     font-size: 22px;
-     font-weight: bold;
- }
- 
+button:hover {
+    background-color: #9EC6F3;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Figtree', sans-serif;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

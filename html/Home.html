@@ -3,52 +3,75 @@
   <head>
     <title>Gamozo</title>
     <link rel="stylesheet" href="../css/Homestylesheet.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body style="background-color: #e9e1cf">
-    
-<div class="Menu">
+    <div class="Menu">
       <div class="logo">
-    <img class="logofix" src="logo.png" alt="logo"> 
-  </div> 
-  <nav class="navbar">
-    <ul>
-      <li><a href="Home.html"><b>Home</b></a></li>
-      <li class="dropdown">
-      <a href="#" class="dropbtn"><b>Game</b></a>
-          <div class="dropdown-content">
-            <a href="tiktactoe.html">Tic Tac Toe</a>
-
-               
-               <a href="number.html" onclick="confirmGame('Number Guessing Game', 'number.html')">Number Guess</a>
-               <a href="#">Game 3</a>
-          </div>
-      </li>
-      <div>
-        
+        <img class="logofix" src="logo.png" alt="logo" />
       </div>
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="Home.html"><b>Home</b></a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn"><b>Game</b></a>
+            <div class="dropdown-content">
+              <a
+                style="color: #618685"
+                href="tiktactoe.html"
+                onclick="confirmGame('Tic Tac Toe', 'tiktactoe.html')"
+                >Tic Tac Toe</a
+              >
+              <a
+                style="color: #2f5f9f"
+                href="number.html"
+                onclick="confirmGame('Number Guessing Game', 'number.html')"
+                >Number Guess</a
+              >
+              <a
+                style="color: red"
+                href="sps.html"
+                onclick="confirmGame('Rock Paper Scissor', 'sps.html')"
+                >Rock Paper Scissor</a
+              >
+            </div>
+          </li>
+          <div></div>
 
-      <li><a href="About.html"><b>About</b></a></li>
-      <li><a href="Contact.html"><b>Contact</b></a></li>
-    </ul>
-  </nav>
-  </div>
-  <div class="header">
-      <h3 style="color: #6b003e; padding-bottom: 1px;">GAMOZO GROWS WHEN YOU SHARE!</h3>
-      <h1 style="font-size: 70px;padding-top: 1px;"><b>FUN GAMES</b></h1>
+          <li>
+            <a href="About.html"><b>About</b></a>
+          </li>
+          <li>
+            <a href="Contact.html"><b>Contact</b></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header">
+      <h3 style="color: #6b003e; padding-bottom: 1px">
+        GAMOZO GROWS WHEN YOU SHARE!
+      </h3>
+      <h1 style="font-size: 70px; padding-top: 1px"><b>FUN GAMES</b></h1>
     </div>
     <div class="center-wrapper">
-      <div class=" container">
+      <div class="container">
         <div class="sentences">
-          <div class="sentence" >GAME ON</div>
+          <div class="sentence">GAME ON</div>
           <div class="sentence">MAKE A MOVE</div>
           <div class="sentence">LET'S PLAY!!</div>
-        </div></div>
+              
+        </div>
+      </div>
     </div>
 
-        <div class="slider-container">
+    <div class="slider-container">
       <div class="slider" style="height: 210px" quantity="10">
         <div class="list">
           <div class="item"><img src="Firstimage.png" alt="First" /></div>
@@ -61,17 +84,8 @@
           <div class="item"><img src="Eighthimg.png" alt="Eight" /></div>
           <div class="item"><img src="Ninthimg.png" alt="Ninth" /></div>
           <div class="item"><img src="Tenthimg.png" alt="Tenth" /></div>
-
-          
-
         </div>
       </div>
     </div>
-
-
-
-    
-    
-    
   </body>
 </html>
