@@ -68,7 +68,7 @@ li.dropdown {
 }
 
 h1 {
-  padding-left: 500px;
+  text-align: center;
   font-family: "Rubik", sans-serif;
   font-size: 70px;
   background: linear-gradient(to right, red, black);
