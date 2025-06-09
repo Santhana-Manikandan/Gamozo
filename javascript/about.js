@@ -17,7 +17,6 @@ function showCard(letter) {
     O2: "ONWARDS JOURNEY",
   };
 
-
   document.getElementById("popupTitle").innerText = titleMap[letter];
   document.getElementById("popupMessage").innerHTML = messages[letter];
 
@@ -25,19 +24,19 @@ function showCard(letter) {
   document.getElementById("sliderContainer").classList.add("blurred");
   document.getElementById("overlay").classList.add("show");
 
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow = "hidden";
 }
 
 function hideCard() {
   document.getElementById("popupCard").classList.remove("show");
   document.getElementById("sliderContainer").classList.remove("blurred");
   document.getElementById("overlay").classList.remove("show");
-  document.body.style.overflow = '';
-
+  document.body.style.overflow = "";
 }
 document.getElementById("overlay").addEventListener("click", hideCard);
 
-/* this for thie mic */
+//mic realted code
+
 const mic = document.getElementById("mic-button");
 const micIcon = document.getElementById("mic-icon");
 const audio = document.getElementById("messageAudio");
@@ -45,12 +44,9 @@ const audio = document.getElementById("messageAudio");
 mic.addEventListener("click", () => {
   if (audio.paused) {
     audio.play();
-    pulse.style.display = "block";
     micIcon.classList.add("active");
   } else {
     audio.pause();
-    pulse.style.animation = "none";
-    mic.classList.remove("active");
-    micIcon.classList.add("active");
+    micIcon.classList.remove("active");
   }
 });
