@@ -157,7 +157,8 @@ button {
 }
 
 button:hover {
-  background-color: #666;
+  background-color: black;
+  color:red;
 }
 .selected {
   border: 4px solid maroon;
