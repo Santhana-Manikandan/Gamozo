@@ -120,6 +120,10 @@ li.dropdown {
   from {
     left: 100%;
   }
+  10% {
+    left: 50%; /* move faster in first 10% time */
+  }
+
   to {
     left: -100%;
   }

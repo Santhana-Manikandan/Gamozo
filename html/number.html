@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Number Guessing Game</title>
-  <link rel="stylesheet" href="../css/Homestylesheet.css" />
-  <link rel="stylesheet" href="../css/number.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&family=Figtree&family=Arimo&display=swap" rel="stylesheet">
-</head>
+  <head>
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="../css/Homestylesheet.css" />
+    <link rel="stylesheet" href="../css/number.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web&family=Figtree&family=Arimo&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body style="background-color: #e9e1cf">
+  <body style="background-color: #e9e1cf">
     <div class="Menu">
       <div class="logo">
-        <img class="logofix" src="logo.png" alt="logo" />
+        <a href="Home.html">
+          <img class="logofix" src="logo.png" alt="logo" />
+        </a>
       </div>
       <nav class="navbar">
         <ul>
@@ -54,57 +59,65 @@
       </nav>
     </div>
 
-  <div class="Game">
-    <h1 class="num"><b>Guess the Number 💭</b></h1>
-    <p class="hint">I’m thinking of a number between 1 and 100...</p>
+    <div class="Game">
+      <h1 class="num"><b>Guess the Number 💭</b></h1>
+      <p class="hint">I’m thinking of a number between 1 and 100...</p>
 
-    <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100" />
-    <button id="submitBtn" onclick="checkGuess()"><b>Submit</b></button>
-    <button id="replayBtn" onclick="resetGame()"><b>Replay</b></button>
+      <input
+        type="number"
+        id="guessInput"
+        placeholder="Enter your guess"
+        min="1"
+        max="100"
+      />
+      <button id="submitBtn" onclick="checkGuess()"><b>Submit</b></button>
+      <button id="replayBtn" onclick="resetGame()"><b>Replay</b></button>
 
-    <p id="message"></p>
-  </div>
+      <p id="message"></p>
+    </div>
 
-  <script>
-    let secretNumber = Math.floor(Math.random() * 100) + 1;
-    let attempts = 0;
+    <script>
+      let secretNumber = Math.floor(Math.random() * 100) + 1;
+      let attempts = 0;
 
-    function checkGuess() {
-      const guess = parseInt(document.getElementById("guessInput").value);
-      const messageEl = document.getElementById("message");
-      attempts++;
+      function checkGuess() {
+        const guess = parseInt(document.getElementById("guessInput").value);
+        const messageEl = document.getElementById("message");
+        attempts++;
 
-      if (isNaN(guess) || guess < 1 || guess > 100) {
-        messageEl.textContent = "⛔ Please enter a number between 1 and 100.";
-        return;
+        if (isNaN(guess) || guess < 1 || guess > 100) {
+          messageEl.textContent = "⛔ Please enter a number between 1 and 100.";
+          return;
+        }
+
+        if (guess === secretNumber) {
+          messageEl.textContent = `🎉 Congrats! You guessed it in ${attempts} tries!`;
+          document.getElementById("guessInput").disabled = true;
+          document.getElementById("submitBtn").disabled = true;
+        } else if (guess < secretNumber) {
+          messageEl.textContent = "📈 Too low! Try again.";
+        } else {
+          messageEl.textContent = "📉 Too high! Try again.";
+        }
       }
 
-      if (guess === secretNumber) {
-        messageEl.textContent = `🎉 Congrats! You guessed it in ${attempts} tries!`;
-        document.getElementById("guessInput").disabled = true;
-        document.getElementById("submitBtn").disabled = true;
-      } else if (guess < secretNumber) {
-        messageEl.textContent = "📈 Too low! Try again.";
-      } else {
-        messageEl.textContent = "📉 Too high! Try again.";
+      function resetGame() {
+        secretNumber = Math.floor(Math.random() * 100) + 1;
+        attempts = 0;
+        document.getElementById("message").textContent = "";
+        document.getElementById("guessInput").value = "";
+        document.getElementById("guessInput").disabled = false;
+        document.getElementById("submitBtn").disabled = false;
       }
-    }
 
-    function resetGame() {
-      secretNumber = Math.floor(Math.random() * 100) + 1;
-      attempts = 0;
-      document.getElementById("message").textContent = "";
-      document.getElementById("guessInput").value = "";
-      document.getElementById("guessInput").disabled = false;
-      document.getElementById("submitBtn").disabled = false;
-    }
-
-    // Enter key submits guess
-    document.getElementById("guessInput").addEventListener("keypress", function (event) {
-      if (event.key === "Enter") {
-        checkGuess();
-      }
-    });
-  </script>
-</body>
+      // Enter key submits guess
+      document
+        .getElementById("guessInput")
+        .addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            checkGuess();
+          }
+        });
+    </script>
+  </body>
 </html>
