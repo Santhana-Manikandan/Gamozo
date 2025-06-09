@@ -68,7 +68,7 @@ li.dropdown {
 }
 .turn-container {
   width: 170px;
-  height: 80px;
+  
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -82,7 +82,7 @@ li.dropdown {
 }
 .turn-container .turn-box {
   border: 3px solid #000;
-  font-size: 1.6rem;
+  font-size: 26px;
   font-weight: 700;
 }
 
@@ -91,10 +91,10 @@ li.dropdown {
 }
 .bg {
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   left: 0;
   width: 85px;
-  height: 40px;
+  height: 45px;
   background-color: #bdcebe;
   z-index: -1;
 }
@@ -130,7 +130,9 @@ li.dropdown {
 .everything {
   padding-top: 70px;
 }
-
+.everythingtop {
+  padding-top: 100px;
+}
 .game-controls {
   display: flex;
   justify-content: space-between;

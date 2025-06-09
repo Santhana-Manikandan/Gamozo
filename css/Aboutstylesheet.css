@@ -164,8 +164,11 @@ li.dropdown {
   transition: all 0.3s ease;
 }
 .thegang{
-  padding-left: 600px;
-  padding-top: 150px;
+  /* padding-left: 600px; */
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 .typewriter {
@@ -190,9 +193,14 @@ li.dropdown {
 }
 .place{
   padding-top: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 
   padding-left: 700px;
-  
+   */
 }
+/*
   #mic-button {
    padding-left: 500px;
     top: -150px; 
@@ -201,6 +209,7 @@ li.dropdown {
     position: absolute;
     
   }
+    */
   #mic-icon{
     width:55px;
   }
