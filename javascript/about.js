@@ -50,3 +50,10 @@ mic.addEventListener("click", () => {
     micIcon.classList.remove("active");
   }
 });
+audio.addEventListener("ended", () => {
+  micIcon.classList.remove("active");
+});
+
+audio.addEventListener("pause", () => {
+  micIcon.classList.remove("active");
+});

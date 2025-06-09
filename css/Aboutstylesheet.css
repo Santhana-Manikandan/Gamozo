@@ -217,22 +217,20 @@ li.dropdown {
   width: 55px;
 }
 #mic-icon.active {
-  animation: micPlaying 1.5s infinite ease-in-out;
+  animation: micDisco 1.5s infinite ease-in-out;
   cursor: pointer;
 }
-@keyframes micPlaying {
-  0%,
-  100% {
-    filter: drop-shadow(0 0 0 rgba(255, 0, 0, 0));
-    transform: scale(1);
-  }
-  50% {
-    filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
-    transform: scale(1.1);
-  }
+@keyframes micDisco {
+  0% { filter: drop-shadow(0 0 5px #ff0080); transform: scale(1); }
+  20% { filter: drop-shadow(0 0 5px #ff8c00); transform: scale(1.1); }
+  40% { filter: drop-shadow(0 0 5px #ffff00); transform: scale(1); }
+  60% { filter: drop-shadow(0 0 5px #00ff00); transform: scale(1.1); }
+  80% { filter: drop-shadow(0 0 5px #00bfff); transform: scale(1); }
+  100% { filter: drop-shadow(0 0 5px #ff00ff); transform: scale(1.1); }
 }
 
+
 #mic-icon.active {
-  animation: micPlaying 1.5s infinite ease-in-out;
+  animation: micDisco 2s infinite ease-in-out;
   cursor: pointer;
 }
